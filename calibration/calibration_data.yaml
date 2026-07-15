@@ -1,0 +1,47 @@
+calibration_date: '2026-07-15T17:59:10.952260'
+camera_matrix:
+- - 3176.1048496007234
+  - 0.0
+  - 1910.4512390448763
+- - 0.0
+  - 3163.722630391182
+  - 1145.0877332765726
+- - 0.0
+  - 0.0
+  - 1.0
+checkerboard_size: !!python/tuple
+- 7
+- 9
+distortion_coefficients:
+- - -0.0030988755261701366
+  - -0.05950263584899137
+  - -0.005314879980337892
+  - 0.0006716299612468599
+  - 0.037420752341603726
+image_height: 2268
+image_width: 4032
+images_used:
+- calibration/calibrated\checkerboard_004.jpg
+- calibration/calibrated\checkerboard_005.jpg
+- calibration/calibrated\checkerboard_006.jpg
+- calibration/calibrated\checkerboard_007.jpg
+- calibration/calibrated\checkerboard_008.jpg
+- calibration/calibrated\checkerboard_009.jpg
+- calibration/calibrated\checkerboard_010.jpg
+- calibration/calibrated\checkerboard_011.jpg
+- calibration/calibrated\checkerboard_012.jpg
+- calibration/calibrated\checkerboard_013.jpg
+- calibration/calibrated\checkerboard_014.jpg
+- calibration/calibrated\checkerboard_015.jpg
+- calibration/calibrated\checkerboard_016.jpg
+- calibration/calibrated\checkerboard_017.jpg
+- calibration/calibrated\checkerboard_018.jpg
+- calibration/calibrated\checkerboard_019.jpg
+- calibration/calibrated\checkerboard_020.jpg
+- calibration/calibrated\checkerboard_021.jpg
+- calibration/calibrated\checkerboard_022.jpg
+- calibration/calibrated\checkerboard_023.jpg
+- calibration/calibrated\checkerboard_024.jpg
+num_images_used: 21
+reprojection_error: 0.4819443106211285
+square_size_mm: 15.0
