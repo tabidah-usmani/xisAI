@@ -1,0 +1,11 @@
+Test Loss: 0.2203
+Test IoU: 0.8556
+Test Precision: 0.8691
+Test Recall: 0.9820
+Test F1: 0.9220
+Test mAP@0.5: 0.8889
+Test mAP@0.5:0.95: 0.8556
+Best Val Loss: 0.2126
+Epochs: 50
+Batch Size: 8
+Learning Rate: 0.0001
