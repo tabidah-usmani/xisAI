@@ -153,4 +153,4 @@ python measurement/accuracy_report.py
 
 ## 7. Conclusion
 
-The pipeline achieves an overall MAE of 6.59 mm and MPE of 4.47% across 11 validated instances, with a consistent systematic over-prediction rather than symmetric random error — most plausibly attributable to ruler/object depth mismatch and/or minor mask over-segmentation, both discussed in Section 6. Calibration-corrected (undistorted) imagery was used throughout, as required, to keep the pixels-per-mm ratio valid across the frame.
+The pipeline achieves an overall MAE of 4.48 mm and MPE of 3.05% across 12 validated instances, with a consistent systematic over-prediction rather than symmetric random error — most plausibly attributable to ruler/object depth mismatch and/or minor mask over-segmentation, both discussed in Section 6. Calibration-corrected (undistorted) imagery was used throughout, as required, to keep the pixels-per-mm ratio valid across the frame.
