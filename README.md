@@ -1,4 +1,4 @@
-# XIS Technical Assessment — Object Segmentation & Metric Measurement Pipeline
+#  Object Segmentation & Metric Measurement Pipeline
 
 An end-to-end computer vision pipeline that calibrates a camera, trains a custom segmentation model on a self-collected dataset, and computes real-world width/height (in millimetres) of the target object from a single photo.
 
