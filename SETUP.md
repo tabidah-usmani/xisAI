@@ -36,13 +36,17 @@ pip install -r requirements.txt
 
 ## 5. Download large files (not included in this repository)
 
-Per the assessment's file-hosting rule, the following are hosted externally. Download them and place them at the paths shown:
-
-| Content | Download from | Place at |
+| Drive subfolder | Contents | Place at (local path) |
 |---|---|---|
-| Full dataset (raw + undistorted images, annotations) | 
-| Full calibration checkerboard image set | 
-| Trained model weights (`best_model.pth`) | 
+| `book (raw)` | Raw dataset images (74) | `dataset/raw/Object1/` |
+| `instances_default.json` (root file) | COCO annotation export from CVAT | `dataset/raw/annotations/instances_default.json` |
+| `book (undistorted)` | Undistorted dataset images | `dataset/undistorted_reference/` |
+| `book (mask)` | Mask reference/backup (not required — masks are auto-generated from `instances_default.json`'s polygons) | — |
+| `calibrated checkerboard` | Raw checkerboard calibration photos (21) | `calibration/samples/checkerboard/` |
+| `detected checkerboard` | Corner-detection visualizations | `calibration/samples/detected/` |
+| `model weights` | Trained `best_model.pth` checkpoint | `models/checkpoints/best_model.pth` |
+| `book with ruler` | Photos used for Step 3 accuracy validation | `measurement/validation_images/` |
+| `ground truth` | Physical ruler/calliper ground-truth records for accuracy validation | reference alongside `measurement/outputs/measurement_log.csv` |
 
 The drive link can be found over here : `https://drive.google.com/drive/folders/1x88m0pdnI6hol6zB0WD0Ln-TCRS-q7zN?usp=sharing`
 The repository ships with small representative samples only (4 images per category) so the code can be inspected without downloading the full dataset.
