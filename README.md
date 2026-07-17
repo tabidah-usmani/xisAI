@@ -4,23 +4,16 @@ An end-to-end computer vision pipeline that calibrates a camera, trains a custom
 
 **Pipeline:** Camera Calibration → Custom Dataset Collection & Labelling → U-Net Segmentation Training → Calibrated Inference → Pixel-to-MM Measurement
 
----
 
-## ⚠️ TODO before submission
-
-- [ ] **Fix `docs/measurement_report.md` Section 7** — currently says "11 instances," "MAE 6.59mm," "MPE 4.47%," which contradicts Section 4.3's "12 instances," "MAE 4.48mm," "MPE 3.05%." Update Section 7 to match Section 4.3.
-- [ ] Verify the Google Drive folder is set to "Anyone with the link can view" and clearly labelled/organized by content type (dataset / calibration / weights)
-- [ ] Confirm exact Python version used and update `SETUP.md`
-- [ ] Rename `docs/*.md` files to uppercase (`CALIBRATION_REPORT.md`, `DATASET_CARD.md`, `TRAINING_REPORT.md`, `MEASUREMENT_REPORT.md`) per spec naming convention (Section 6.2)
 
 ---
 
 ## Project Overview
 
-This project was built for the XIS AI/Computer Vision Department technical assessment. It implements a full industrial-style measurement workflow:
+This project implements a full industrial-style measurement workflow:
 
 1. **Camera Calibration** — Intrinsic calibration using a checkerboard pattern to remove lens distortion (`calibration/`)
-2. **Dataset Collection & Labelling** — Custom images of `<OBJECT_NAME>` collected and labelled (`dataset/`)
+2. **Dataset Collection & Labelling** — Custom images of `book` collected and labelled (`dataset/`)
 3. **Segmentation Model Training** — A custom U-Net (not YOLO/Roboflow, per assessment requirements) trained from scratch to segment the object (`models/`)
 4. **Calibrated Inference** — A script that undistorts a raw image and runs the trained model to produce an annotated segmentation mask (`inference/`)
 5. **Pixel-to-MM Measurement** — Converts the predicted mask's pixel dimensions into real-world millimetres using a ruler-based reference calibration, validated against physical ruler/calliper measurements (`measurement/`)
@@ -137,13 +130,23 @@ Height error is consistently larger than width error across all 12 instances, wi
 
 ## Large Files
 
-Per the assessment's file-hosting requirement (Section 2.2), the following are hosted externally and **not** committed to this repository:
+Per the assessment's file-hosting requirement (Section 2.2), the following are hosted in a single Google Drive folder — **[XIS_Assessment](https://drive.google.com/drive/folders/1x88m0pdnI6hol6zB0WD0Ln-TCRS-q7zN?usp=sharing)** — and are **not** committed to this repository:
 
-| Content | Link |
-|---|---|
-| Full raw + undistorted dataset (74 images), full calibration checkerboard set (21 images), and trained model weights (`best_model.pth`) | [Google Drive folder](https://drive.google.com/drive/folders/1x88m0pdnI6hol6zB0WD0Ln-TCRS-q7zN?usp=drive_link) |
+| Drive subfolder | Contents | Place at (local path) |
+|---|---|---|
+| `book (raw)` | Raw dataset images (74) | `dataset/raw/Object1/` |
+| `instances_default.json` (root file) | COCO annotation export from CVAT | `dataset/raw/annotations/instances_default.json` |
+| `book (undistorted)` | Undistorted dataset images | `dataset/undistorted_reference/` |
+| `book (mask)` | Mask reference/backup (not required — masks are auto-generated from `instances_default.json`'s polygons) | — |
+| `calibrated checkerboard` | Raw checkerboard calibration photos (21) | `calibration/samples/checkerboard/` |
+| `detected checkerboard` | Corner-detection visualizations | `calibration/samples/detected/` |
+| `model weights` | Trained `best_model.pth` checkpoint | `models/checkpoints/best_model.pth` |
+| `book with ruler` | Photos used for Step 3 accuracy validation | `measurement/validation_images/` |
+| `ground truth` | Physical ruler/calliper ground-truth records for accuracy validation | reference alongside `measurement/outputs/measurement_log.csv` |
 
-> ⚠️ **Verify before submission:** confirm this folder's sharing setting is "Anyone with the link can view" (Section 2.2 requires this exactly — a restricted/request-access link will be treated as a missing deliverable). Also confirm the folder is internally organized/labelled clearly enough that a reviewer can tell which subfolder is the dataset vs. calibration images vs. model weights — Section 2.2 asks each link to be "clearly labelled with what it contains." If the current folder mixes everything together without clear subfolder names, consider adding a short `folder structure` note here or splitting into clearly named subfolders.
+After downloading `book (raw)`, `instances_default.json`, and `book (undistorted)` into the paths above, run `python dataset/split_dataset.py` — this auto-generates `dataset/split/{train,val,test}/{images,images_undistorted,masks,annotations.json}` (masks are built from the COCO polygons, not downloaded). Full details in [`SETUP.md`](SETUP.md).
+
+
 
 ---
 
