@@ -115,7 +115,7 @@ Per the assessment's file-hosting requirement (Section 2.2), the following are h
 | `detected checkerboard` | Corner-detection visualizations | `calibration/samples/detected/` |
 | `model weights` | Trained `best_model.pth` checkpoint | `models/checkpoints/best_model.pth` |
 | `book with ruler` | Photos used for Step 3 accuracy validation | `measurement/validation_images/` |
-| `ground truth` | Physical ruler/calliper ground-truth records for accuracy validation | reference alongside `measurement/outputs/measurement_log.csv` |
+
 
 After downloading `book (raw)`, `instances_default.json`, and `book (undistorted)` into the paths above, run `python dataset/split_dataset.py` — this auto-generates `dataset/split/{train,val,test}/{images,images_undistorted,masks,annotations.json}` (masks are built from the COCO polygons, not downloaded). Full details in [`SETUP.md`](SETUP.md).
 
