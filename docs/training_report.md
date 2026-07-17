@@ -59,8 +59,10 @@ Loss and IoU curves (train vs. validation) are available via TensorBoard:
 ```
 tensorboard --logdir models/logs
 ```
+Visualizations are saved at `models/outputs/test_predictions/`.
 
-*(Insert exported PNG screenshots of `Loss/train` vs `Loss/val` and `Iou/train` vs `Iou/val` here before final submission.)*
+
+
 
 **Summary of trend:**
 - Training loss decreased smoothly and consistently from 0.5634 (epoch 1) to 0.1314 (epoch 50).
