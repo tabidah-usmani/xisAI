@@ -46,7 +46,7 @@ pip install -r requirements.txt
 | `detected checkerboard` | Corner-detection visualizations | `calibration/samples/detected/` |
 | `model weights` | Trained `best_model.pth` checkpoint | `models/checkpoints/best_model.pth` |
 | `book with ruler` | Photos used for Step 3 accuracy validation | `measurement/validation_images/` |
-| `ground truth` | Physical ruler/calliper ground-truth records for accuracy validation | reference alongside `measurement/outputs/measurement_log.csv` |
+
 
 **After placing `book (raw)`, `instances_default.json`, and `book (undistorted)` at the paths above, generate the train/val/test split:**
 ```bash
