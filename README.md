@@ -44,33 +44,6 @@ xisAI/
 
 ---
 
-## Quick Start
-
-Full setup and environment instructions are in [`SETUP.md`](SETUP.md). Short version:
-
-```bash
-git clone https://github.com/tabidah-usmani/xisAI.git
-cd xisAI
-pip install -r requirements.txt
-```
-
-**Train the segmentation model:**
-```bash
-python models/train.py
-```
-
-**Run inference on a new raw image:**
-```bash
-python inference/inference.py --image path/to/raw_image.jpg
-```
-
-**Run the full measurement pipeline (undistort → segment → measure in mm):**
-```bash
-python measurement/measurement.py --image path/to/raw_image.jpg --ruler-mm 100
-```
-
----
-
 ## Documentation
 
 | Document | Contents |
