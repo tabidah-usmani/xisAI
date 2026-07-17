@@ -48,8 +48,15 @@ pip install -r requirements.txt
 | `book with ruler` | Photos used for Step 3 accuracy validation | `measurement/validation_images/` |
 | `ground truth` | Physical ruler/calliper ground-truth records for accuracy validation | reference alongside `measurement/outputs/measurement_log.csv` |
 
+**After placing `book (raw)`, `instances_default.json`, and `book (undistorted)` at the paths above, generate the train/val/test split:**
+```bash
+python dataset/split_dataset.py
+```
+This automatically creates `dataset/split/{train,val,test}/images/`, `images_undistorted/`, `masks/`, and `annotations.json` — **you do not need to manually create these folders or download pre-split data.** Masks are generated on the fly from the COCO polygon annotations, using a fixed random seed (42) for reproducible splits.
+
 The drive link can be found over here : `https://drive.google.com/drive/folders/1x88m0pdnI6hol6zB0WD0Ln-TCRS-q7zN?usp=sharing`
 The repository ships with small representative samples only (4 images per category) so the code can be inspected without downloading the full dataset.
+
 
 ## 6. Verify the calibration file
 
